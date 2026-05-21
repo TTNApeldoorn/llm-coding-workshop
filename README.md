@@ -1,64 +1,80 @@
 # LLM Coding Workshop — IoT Apeldoorn
 
-Workshop materials for the IoT-Apeldoorn meetup introducing Large Language Models (LLMs) such as ChatGPT and Claude as coding assistants for embedded device development.
+Workshopmaterialen voor de **LLM Coding Workshop** op de IoT-Apeldoorn meetup. In deze workshop ervaar je hands-on hoe je Large Language Models (LLM's) zoals ChatGPT en GitHub Copilot inzet als coding-assistent bij het ontwikkelen van embedded software.
 
 ---
 
-## Workshop Description
+## Beschrijving van de workshop
 
-This workshop gives participants hands-on experience using LLM-based coding assistants during embedded software development. Rather than teaching a specific technology, it teaches a skill: how to communicate effectively with an LLM to get useful, working code.
+In deze workshop oefen je met het gebruik van een LLM-coding-assistent tijdens het ontwikkelen van embedded software. We leren je géén specifieke technologie — we leren je een **vaardigheid**: hoe je effectief communiceert met een LLM om bruikbare, werkende code te krijgen.
 
-Participants discover through direct experience that the quality and wording of a prompt directly determines the quality of the result — and that the same goal, described differently, produces different code. The workshop also demonstrates that working in small, tested steps is the most reliable path from idea to working firmware.
+Je ontdekt al doende dat de kwaliteit en bewoording van je prompt direct bepalen wat je terugkrijgt: hetzelfde doel, anders verwoord, levert andere code op. Daarnaast oefen je met **klein-en-getest werken**: de meest betrouwbare route van idee naar werkende firmware.
 
----
-
-## Learning Objectives
-
-By the end of this workshop, participants will be able to:
-
-1. Use an LLM as a coding assistant for embedded device development.
-2. Understand that the quality and wording of a prompt determines the quality of the output.
-3. Demonstrate that the same objective, worded differently, produces different code.
-4. Apply an iterative, small-steps approach: work in small chunks and test each step before moving on.
-5. Apply consistent unit and integration testing following the V-model — pairing each development step (requirements → high-level design → detailed design → implementation) with its corresponding test level (system test → integration test → unit test).
+De doelgroep is beginnend met een kleine groep gevorderden. Alles wordt in het Nederlands aangeboden.
 
 ---
 
-## Workshop Structure
+## Leerdoelen
 
-### Phase 1 — Introduction
-Overview of LLMs and their role as coding assistants. Discussion of what makes a prompt effective or ineffective. Comparison of prompting strategies.
+Na de workshop kun je:
 
-### Phase 2 — Hands-On: First Prompt
-Participants attempt a coding task using their own first prompt. Results are shared and compared to show how wording affects output.
-
-### Phase 3 — Iterative Development
-Participants refine their prompts and work through the task in small steps, testing each before continuing. Focus on breaking large goals into small, verifiable chunks.
-
-### Phase 4 — Testing with the V-Model
-Participants write unit and integration tests for the code produced in Phase 3. The V-model pairing of specification to test level is applied and discussed.
-
-### Phase 5 — Reflection
-Group discussion: what worked, what did not, and how to improve prompting technique for future projects.
+1. Een LLM inzetten als coding-assistent bij embedded ontwikkeling.
+2. Je werkomgeving en repository voorbereiden met relevante documentatie, zodat de LLM context heeft.
+3. Werken in kleine, testbare stappen: *een olifant eet je in kleine hapjes*.
+4. Effectief prompten en je prompts stap voor stap aanscherpen tot je het beoogde resultaat dicht benadert.
+5. Met de LLM "rubber ducken" — gebruik hem als slimme gesprekspartner om je eigen begrip te toetsen of om te testen en debuggen.
+6. Het V-model toepassen: specificatie → implementatie ↔ unit-, integratie- en systeemtest.
 
 ---
 
-## How to Use This Repository
+## Wat krijg je mee, wat breng je mee?
 
-- Browse the repository for background reading, reference material, and workshop exercises.
-- Follow the instructions provided by the workshop facilitator.
-- Use issues and pull requests to submit feedback or suggest improvements.
+| Door wie?  | Wat                                                                                            |
+|------------|------------------------------------------------------------------------------------------------|
+| Workshop   | Een LilyGO TTGO LoRa32 868 MHz ESP32 (display mogelijk defect — geen probleem voor de oefeningen). |
+| Workshop   | Een LoRa-antenne voor 868 MHz.                                                                  |
+| Zelf       | Een micro-USB-**data**kabel.                                                                    |
+| Zelf       | Een laptop met VSCode, PlatformIO en GitHub Copilot geïnstalleerd.                              |
+
+**Lees vóór de workshop** [`voorbereidingen.md`](workshop/voorbereidingen.md). Daar staat precies hoe je je laptop klaarzet. Door dit thuis te doen win je tijd voor de oefeningen zelf.
 
 ---
 
-## License
+## Opbouw van de workshop
 
-The workshop materials in this repository are licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License (CC BY-NC-ND 4.0) by IoT Apeldoorn (https://iotapeldoorn.nl/).
+De workshop bestaat uit drie fases:
 
-<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.
+### Fase 1 — Voorbereidingen
+Installatie van VSCode, PlatformIO en GitHub Copilot, en het aanmaken van de benodigde accounts. **Bij voorkeur thuis te doen.** Zie [`voorbereidingen.md`](workshop/voorbereidingen.md).
+
+### Fase 2 — Hallo Wereld (±1,5 uur)
+Je bouwt met behulp van een LLM een toepassing die `Hallo wereld` over serial print en een on-board LED laat knipperen. Daarbij oefen je met documentatie verzamelen, functionele en technische specificaties, een gefaseerd implementatieplan en testen volgens het V-model. Zie [`hallo-wereld.md`](workshop/hallo-wereld.md).
+
+### Fase 3 — Verbinding maken
+Je activeert de LoRa-radio van het board, zendt een persoonlijk bericht uit en ontvangt berichten van de andere deelnemers. Je leert nadenken over de fysieke parameters (frequentie, SF, BW, CR, preamble, sync word) en oefent verder met prompten en rubber ducking. Zie [`verbinding-maken.md`](workshop/verbinding-maken.md).
+
+Aan het eind sluiten we af met een gezamenlijke reflectie.
+
+---
+
+## Hoe gebruik je deze repository?
+
+- Lees [`voorbereidingen.md`](workshop/voorbereidingen.md) **vóór** de workshop.
+- Werk tijdens de workshop de bestanden [`hallo-wereld.md`](workshop/hallo-wereld.md) en [`verbinding-maken.md`](workshop/verbinding-maken.md) per fase door.
+- Achtergrondmateriaal over de TTGO LoRa32, ESP32 en LoRa staat in de map [`Documentation/`](Documentation/).
+- Een eenvoudig PlatformIO-startproject staat in [`software/helloWorld/`](software/helloWorld/).
+- Feedback of verbetervoorstellen? Open een issue of pull request.
+
+---
+
+## Licentie
+
+De workshopmaterialen in deze repository zijn gelicentieerd onder de Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License (CC BY-NC-ND 4.0) door IoT Apeldoorn (https://iotapeldoorn.nl/).
+
+<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />Dit werk valt onder de <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.
 
 ---
 
 ## Disclaimer
 
-This project is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+Dit project wordt gedeeld in de hoop dat het nuttig is, maar ZONDER ENIGE GARANTIE; ook niet de impliciete garantie van VERKOOPBAARHEID of GESCHIKTHEID VOOR EEN BEPAALD DOEL.
